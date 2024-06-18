@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Bem-vindo, {{ g.username }}</h2>
+    <ul>
+        <li><a href="/adicionar_usuario"><button>Adicionar Usuário</button></a></li>
+        <li><a href="/alterar_usuario"><button>Alterar Usuário</button></a></li>
+        <li><a href="/listar_usuarios"><button>Listar Usuários</button></a></li>
+        <li><a href="/remover_usuario"><button>Remover Usuário</button></a></li>
+        <li><a href="/registros_acesso"><button>Registros de Controle de Acesso</button></a></li>
+        <li><a href="/registros_administrativos"><button>Registros Administrativos</button></a></li>
+        <li><a href="/administradores"><button>Gerenciar Administradores</button></a></li>
+    </ul>
+</body>
+</html>

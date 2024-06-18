@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Usuários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Listar Usuários</h2>
+    <table border = "1">
+        <tr>
+            <th>Matrícula</th>
+            <th>Nome</th>
+            <th>Card ID</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario[0] }}</td>
+            <td>{{ usuario[1] }}</td>
+            <td>{{ usuario[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>

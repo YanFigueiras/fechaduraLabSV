@@ -1,0 +1,230 @@
+/* styles.css */
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b; /* Cinza escuro */
+    color: #e0e0e0; /* Cinza claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #1e1e1e; /* Cinza mais escuro */
+    border-bottom: 2px solid #444444; /* Cinza médio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-right: 20px; /* Espaço entre o nome e o botão */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    color: #e0e0e0; /* Cinza claro */
+}
+
+.user-info a.logout-button {
+    padding: 10px 15px;
+    background-color: #388e3c; /* Verde mais escuro */
+    color: #fff;
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Inclui transição de cor */
+    margin-left: 20px; /* Espaço antes do botão de logout */
+}
+
+.user-info a.logout-button:hover {
+    background-color: #2e7d32; /* Tom ainda mais escuro de verde */
+    color: #fff; /* Garante que o texto permaneça visível */
+}
+
+h2 {
+    color: #e0e0e0; /* Cinza claro */
+    margin: 30px 0;
+    font-size: 28px; /* Aumenta o tamanho da fonte */
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    margin: 30px 0;
+    align-items: center;
+    background-color: #1e1e1e; /* Cinza mais escuro */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    margin: 15px 0 8px;
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    text-align: center;
+    color: #e0e0e0; /* Cinza claro */
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444444; /* Cinza médio */
+    border-radius: 5px;
+    background-color: #2b2b2b; /* Cinza escuro */
+    color: #e0e0e0; /* Cinza claro */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+select:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    border-color: #388e3c; /* Verde mais escuro */
+    outline: none;
+}
+
+input[type="submit"],
+button {
+    padding: 12px;
+    background-color: #388e3c; /* Verde mais escuro */
+    color: #fff;
+    font-weight: bold; /* Texto em negrito */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Inclui transição de cor */
+    margin-bottom: 15px; /* Adicionado para espaçamento entre botões */
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #2e7d32; /* Tom ainda mais escuro de verde */
+    color: #fff; /* Garante que o texto permaneça visível */
+}
+
+table {
+    width: 90%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: center;
+    background-color: #1e1e1e; /* Cinza mais escuro */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #444444; /* Cinza médio */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    text-align: center;
+}
+
+th {
+    background-color: #2b2b2b; /* Cinza escuro */
+    color: #e0e0e0; /* Cinza claro */
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 30px;
+    text-align: center;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: #4caf50; /* Verde */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #388e3c; /* Tom mais escuro de verde */
+}
+
+.back-button {
+    display: inline-block;
+    margin: 30px;
+    padding: 15px 30px;
+    background-color: #388e3c; /* Verde mais escuro */
+    color: #fff;
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Inclui transição de cor */
+}
+
+.back-button:hover {
+    background-color: #2e7d32; /* Tom ainda mais escuro de verde */
+    color: #fff; /* Garante que o texto permaneça visível */
+}
+
+/* Estilos para mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 26px; /* Ajusta o tamanho da fonte */
+    }
+
+    label,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    input[type="submit"],
+    button,
+    .back-button {
+        font-size: 18px; /* Ajusta o tamanho da fonte */
+    }
+
+    .user-info span,
+    .user-info a.logout-button {
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+
+    th, td {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+        padding: 12px;
+    }
+}

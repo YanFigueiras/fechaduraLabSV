@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciar Administradores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Gerenciar Administradores</h2>
+    <h3>Adicionar Administrador</h3>
+    <form method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <input type="submit" name="adicionar" value="Adicionar">
+    </form>
+    <h3>Editar Administrador</h3>
+    <form method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <input type="submit" name="editar" value="Editar">
+    </form>
+    <h3>Remover Administrador</h3>
+    <form method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required>
+        <input type="submit" name="remover" value="Remover">
+    </form>
+    <h3>Lista de Administradores</h3>
+    <table border = "1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+        </tr>
+        {% for admin in administradores %}
+        <tr>
+            <td>{{ admin[0] }}</td>
+            <td>{{ admin[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>

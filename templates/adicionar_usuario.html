@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}    
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+        <h2>Adicionar Usuário</h2>
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        {% if not solicitacao_id %}
+        <form method="post">
+            <input type="hidden" name="solicitar_cartao" value="1">
+            <input type="submit" value="Solicitar Leitura do Cartão">
+        </form>
+        {% else %}
+        <p>Aproxime o cartão do leitor...</p>
+        <form method="post">
+            <input type="hidden" name="solicitacao_id" value="{{ solicitacao_id }}">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <input type="hidden" name="confirmar_cadastro" value="1">
+            <input type="submit" value="Confirmar Cadastro">
+        </form>
+        {% endif %}
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>

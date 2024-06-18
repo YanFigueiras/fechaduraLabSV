@@ -1,0 +1,4 @@
+app.secret_key = b'@\x1d\xa7\\N\xf1\xb7\xb4\x18\xa1\xb7\x92\xbf\x93\xbf\x8bu\x8a\x86\xe3|\xd0c+'
+
+email fechadura.labsv@outlook.com
+senha PwCSxWcyaHC4Nv7

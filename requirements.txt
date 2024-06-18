@@ -1,0 +1,4 @@
+Flask
+RPi.GPIO
+mfrc522
+gunicorn

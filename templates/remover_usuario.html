@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remover Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Remover Usuário</h2>
+    <form method="post">
+        <label for="matricula">Selecione o Usuário:</label>
+        <select id="matricula" name="matricula" required>
+            {% for usuario in usuarios %}
+            <option value="{{ usuario[0] }}">{{ usuario[1] }} (Matrícula: {{ usuario[0] }})</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Remover">
+    </form>
+    <br>
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>

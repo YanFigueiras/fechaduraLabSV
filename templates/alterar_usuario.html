@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alterar Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Alterar Usuário</h2>
+    <form method="get" action="{{ url_for('alterar_usuario') }}">
+        <label for="matricula">Selecione o Usuário:</label>
+        <select id="matricula" name="matricula" required>
+            {% for usuario in usuarios %}
+            <option value="{{ usuario[0] }}" {% if usuario[0] == request.args.get('matricula') %}selected{% endif %}>
+                {{ usuario[1] }} ({{ usuario[0] }})
+            </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Carregar">
+    </form>
+    {% if usuario %}
+    <form method="post">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" value="{{ usuario[0] }}" readonly>
+        <label for="novo_nome">Novo Nome:</label>
+        <input type="text" id="novo_nome" name="novo_nome" value="{{ usuario[1] }}">
+        <label for="novo_card_id">Novo Card ID:</label>
+        <input type="text" id="novo_card_id" name="novo_card_id" value="{{ usuario[2] }}">
+        <input type="submit" value="Salvar Alterações">
+    </form>
+    {% endif %}
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>

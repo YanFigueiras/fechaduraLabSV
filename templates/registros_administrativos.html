@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registros Administrativos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            Logado como: {{ g.username }}
+            <a href="{{ url_for('logout_route') }}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <h2>Registros Administrativos</h2>
+    <form method="post">
+        <label for="acao">Filtrar por Ação:</label>
+        <select id="acao" name="acao">
+            <option value="">Todas</option>
+            {% for acao in acoes %}
+            <option value="{{ acao[0] }}">{{ acao[0] }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="data_inicio">Data Início:</label>
+        <input type="date" id="data_inicio" name="data_inicio"><br>
+        
+        <label for="hora_inicio">Hora Início:</label>
+        <input type="time" id="hora_inicio" name="hora_inicio"><br>
+        
+        <label for="data_fim">Data Fim:</label>
+        <input type="date" id="data_fim" name="data_fim"><br>
+        
+        <label for="hora_fim">Hora Fim:</label>
+        <input type="time" id="hora_fim" name="hora_fim"><br>
+        
+        <input type="submit" value="Filtrar"><br>
+    </form>
+    {% if registros %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ação</th>
+            <th>Descrição</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for registro in registros %}
+        <tr>
+            <td>{{ registro[0] }}</td>
+            <td>{{ registro[1] }}</td>
+            <td>{{ registro[2] }}</td>
+            <td>{{ registro[3] }}</td>
+            <td>{{ registro[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+    <a href="/" class="back-button">Voltar</a>
+</body>
+</html>
