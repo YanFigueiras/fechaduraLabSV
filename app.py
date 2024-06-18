@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 app.secret_key = b'@\x1d\xa7\\N\xf1\xb7\xb4\x18\xa1\xb7\x92\xbf\x93\xbf\x8bu\x8a\x86\xe3|\xd0c+'
-db_path = 'dataBase/laboratorio.db'
+db_path = '/home/avant/fechaduraLabSV/dataBase/laboratorio.db'
 
 def login_required(f):
     @wraps(f)
